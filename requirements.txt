@@ -1,0 +1,2 @@
+# Kết nối Oracle Database (thin mode, không cần Oracle Client cài sẵn)
+oracledb>=2.0.0

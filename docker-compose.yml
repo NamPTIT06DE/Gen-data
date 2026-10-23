@@ -1,0 +1,23 @@
+services:
+  rename-images:
+    build: .
+    image: data-source:v1
+    container_name: rename_images
+    # Đổi tên ảnh thành số CCCD ngẫu nhiên
+    command: python rename_images_cccd.py
+    volumes:
+      # Mount thư mục ảnh từ máy HOST vào container
+      - ./images:/app/images
+      - ./rename_images_cccd.py:/app/rename_images_cccd.py
+    network_mode: host
+
+  put-images-oracle:
+    build: .
+    image: data-source:v1
+    container_name: put_images_oracle
+    # Đẩy ảnh (đã đổi tên thành CCCD) lên Oracle
+    command: python putimg_orcl.py
+    volumes:
+      - ./images:/app/images
+      - ./putimg_orcl.py:/app/putimg_orcl.py
+    network_mode: host
