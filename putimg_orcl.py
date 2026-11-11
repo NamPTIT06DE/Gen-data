@@ -18,7 +18,7 @@ from concurrent.futures import ThreadPoolExecutor
 # Cấu hình Oracle
 # ---------------------------------------------------------------------------
 ORACLE_CONFIG = {
-    "host": "host.docker.internal",  # oracle-db để nếu chạy linux
+    "host": "localhost",  # localhost để nếu chạy linux
     "port": 1521,
     "service_name": "XEPDB1",
     "user": "IMGDATA",

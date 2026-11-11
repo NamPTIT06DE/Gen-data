@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.12-slim
 
 # Không ghi .pyc và log flush ngay lập tức
 ENV PYTHONDONTWRITEBYTECODE=1
